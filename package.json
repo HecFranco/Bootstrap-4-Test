@@ -1,7 +1,8 @@
 {
+  "__comment": "Data for Bootstrap-4-Test",
   "name": "demos",
   "version": "1.0.0",
-  "description": "Current demos for Lemoncode Master",
+  "description": "Current demos for Bootstrap-4-Test",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
@@ -14,5 +15,8 @@
     "gulp-connect": "^5.0.0",
     "gulp-open": "^2.0.0",
     "gulp-sass": "3.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6"
   }
 }

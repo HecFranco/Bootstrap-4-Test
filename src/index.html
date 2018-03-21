@@ -3,12 +3,225 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>LEMONCODE CSS PLAYGROUND</title>
+  <title>BOOTSTRAP 4 TEST</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="content/site.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-
+  <header class="container-fluid header">
+    <div class="row">
+      <div class="col">
+        <!-- http://getbootstrap.com/docs/4.0/components/navbar/ -->
+        <!-- navbar-light o navbar-dark -->
+        <nav class="navbar navbar-expand-sm navbar-light">
+          <span class="navbar-brand">Gestor de infracciones</span>
+          <!-- button toggle -->
+          <!-- data-target="#navbar" coincidirá con el id -->
+          <button class="navbar-toggler" type ="button" data-toggle="collapse" data-target="#navbar">
+            <!-- burguer button -->
+            <span class="navbar-toggler-icon"></span>
+            <!-- chevron button -->
+            <!-- 
+            <i class="fa fa-chevron-down"></i>
+            -->
+          </button>
+          <!-- importante el id -->
+          <div class="collapse navbar-collapse" id="navbar">
+            <!-- https://getbootstrap.com/docs/4.0/utilities/spacing/ -->
+            <ul class="navbar-nav ml-auto">
+              <!-- sólo el primer li active -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <!-- https://fontawesome.com/icons?d=gallery&q=file -->
+                  <i class="fa fa-file"></i>
+                  <!-- https://getbootstrap.com/docs/4.0/utilities/display/ -->
+                  <!-- ocultar el texto usamos d-sm-none para verse d-lg-inline-->
+                  <span class "d-sm-none d-lg-inline">Estadísticas</span>
+                </a>
+              </li>
+              <!-- duplicar líneas alt+shift+flecha abajo -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <!-- https://fontawesome.com/icons?d=gallery&q=file -->
+                  <i class="fa fa-users"></i>
+                  <span class "d-sm-none d-lg-inline">ciudadanos</span>
+                </a>
+              </li>
+              <!-- duplicar líneas alt+shift+flecha abajo -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <!-- https://fontawesome.com/icons?d=gallery&q=file -->
+                  <i class="fa fa-user"></i>
+                  <span class "d-sm-none d-lg-inline">ciudadano</span>
+                </a>
+              </li>
+              <!-- duplicar líneas alt+shift+flecha abajo -->
+            </ul>
+          </div>
+        </nav>        
+      </div>
+    </div>
+  </header>
+  <section class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 search-component">
+        <!-- http://getbootstrap.com/docs/4.0/components/forms/ -->
+        <form>
+          <div class="form-row">
+            <div class="form-group col-12">
+              <i class="fa fa-search"></i>
+              <span class="col">Buscar infracción</span>
+              <!-- button toggle -->
+              <!-- data-target="#form" coincidirá con el id -->
+              <button id ="form-button" class="navbar-toggler float-right" type ="button" data-toggle="collapse" data-target="#form">
+                <i class="fa fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <!-- mostramos el collapse usando show -->
+          <!-- importante el id -->
+          <div class="collapse navbar-collapse show" id="form">
+            <div class="form-row">
+              <div class="form-group col-md-3 col-lg-6">
+                <label>Fecha registro:</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-3 col-lg-6">
+                <label>Estado:</label>
+                <select class="custom-select">
+                  <option value="0">Elige estado...</option>
+                  <option value="1">Cerrada</option>
+                  <option value="2">Abierta</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-3 col-lg-6">
+                <label>Num. Infracción:</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-3 col-lg-6">
+                <label>Referencia Externa:</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6 col-lg-12">
+                <label>Municipio:</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-6 col-lg-12">
+                <label>Provincia:</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-12">
+                <label>Tipo:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="parking">
+                  <label class="form-check-label" for="parking">
+                    Aparcamiento
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="speed">
+                  <label class="form-check-label" for="speed">
+                    Velocidad
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <button type="submit" class="btn btn-success float-right">
+                  Buscar
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-8">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <!-- ojo active -->
+            <a class="nav-link active" data-toggle="tab" href="#closedInfringement">
+              Infracciones cerradas
+            </a>
+          </li>
+          <!-- duplicar líneas alt+shift+flecha abajo -->
+          <li class="nav-item">
+            <!-- ojo sin active -->
+            <a class="nav-link" data-toggle="tab" href="#pendingInfringement">
+              Infracciones abiertas
+            </a>
+          </li>
+          <!-- duplicar líneas alt+shift+flecha abajo -->
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="closedInfringement">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Ciudadano</th>
+                  <th>Tipo</th>
+                  <th>F.Cierre</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Perez Gomez, Juan</td>
+                  <td>APARCAMIENTO</td>
+                  <td>12/02/2018</td>
+                </tr>
+                <tr>
+                  <td>Perez Gomez, Juan</td>
+                  <td>APARCAMIENTO</td>
+                  <td>12/02/2018</td>
+                </tr>
+                <tr>
+                  <td>Perez Gomez, Juan</td>
+                  <td>APARCAMIENTO</td>
+                  <td>12/02/2018</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <!-- duplicar líneas alt+shift+flecha abajo -->
+          <div class="tab-pane" id="pendingInfringement">
+            Infracciones abiertas
+          </div>
+        </div>
+        <!-- duplicar líneas alt+shift+flecha abajo -->
+      </div>
+    </div>
+  </section>
+  <footer class="container-fluid">
+    <div class="row">
+      <div class="col" style="background: Aqua">
+        Footer
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById("form-button").addEventListener('click', function () {
+      console.log("press button");
+      console.log(this.getElementsByTagName("i")[0].className);
+      class_icon_form_button = this.getElementsByTagName("i")[0].className;
+      if( class_icon_form_button == 'fa fa-chevron-down'){
+        this.getElementsByTagName("i")[0].className = 'fa fa-chevron-up';
+      }else{
+        this.getElementsByTagName("i")[0].className = 'fa fa-chevron-down';
+      }
+    });
+  </script>
 </body>
 </html>
